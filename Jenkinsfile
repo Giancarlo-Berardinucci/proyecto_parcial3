@@ -24,9 +24,9 @@ pipeline {
             steps {
                 sh '''
                     docker run --rm --name zap_baseline \
-                      -t owasp/zap2docker-stable zap-baseline.py \
-                      -t http://host.docker.internal:5000
-                '''
+                      zaproxy/zap-stable \
+                      zap-baseline.py -t http://host.docker.internal:5000
+                        '''
             }
         }
 
